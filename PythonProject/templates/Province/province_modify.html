@@ -1,0 +1,27 @@
+{% load staticfiles %}
+{% include 'check_logstate.html' %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/province.css' %}" />
+<div id="province_EditDiv">
+	<form id="provinceModifyForm" enctype="multipart/form-data"  method="post">
+        {% csrf_token %}
+		<div>
+			<span class="label">省份id:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="province_provinceId_modify" name="province.provinceId" value="{{ provinceId }}" style="width:200px" />
+			</span>
+		</div>
+
+		<div>
+			<span class="label">省份名称:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="province_provinceName_modify" name="province.provinceName" style="width:200px" />
+
+			</span>
+
+		</div>
+		<div class="operation">
+			<a id="provinceModifyButton" class="easyui-linkbutton">更新</a> 
+		</div>
+	</form>
+</div>
+<script src="{% static 'js/Province/province_modify.js' %}"></script>
